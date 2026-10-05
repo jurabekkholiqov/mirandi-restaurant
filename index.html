@@ -1,0 +1,1160 @@
+<!DOCTYPE html>
+<html lang="uz" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mirandi Restaurant & Banquet Hall | Toshkent</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        gold: {
+                            50: '#FAF6EE',
+                            100: '#F5EEDC',
+                            300: '#E6D39E',
+                            400: '#D6BD70',
+                            500: '#C5A059',
+                            600: '#B08842',
+                            700: '#8C692E',
+                        },
+                        dark: {
+                            900: '#0B0F17',
+                            800: '#131A26',
+                            700: '#1E293B',
+                            600: '#334155'
+                        }
+                    },
+                    fontFamily: {
+                        serif: ['"Playfair Display"', 'serif'],
+                        sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .gold-gradient-text {
+            background: linear-gradient(135deg, #F5EEDC 0%, #C5A059 50%, #8C692E 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .glass-panel {
+            background: rgba(19, 26, 38, 0.85);
+            backdrop-filter: blur(14px);
+            -webkit-backdrop-filter: blur(14px);
+            border: 1px solid rgba(197, 160, 89, 0.25);
+        }
+        .glass-panel-light {
+            background: rgba(255, 255, 255, 0.04);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        .modal-animate-in {
+            animation: modalIn 0.25s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+        }
+        @keyframes modalIn {
+            0% { opacity: 0; transform: scale(0.95) translateY(10px); }
+            100% { opacity: 1; transform: scale(1) translateY(0); }
+        }
+        .custom-scrollbar::-webkit-scrollbar {
+            width: 6px;
+            height: 6px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-track {
+            background: #0B0F17;
+        }
+        .custom-scrollbar::-webkit-scrollbar-thumb {
+            background: #C5A059;
+            border-radius: 3px;
+        }
+    </style>
+</head>
+<body class="bg-dark-900 text-gray-200 font-sans antialiased custom-scrollbar pb-16 md:pb-0">
+
+    <!-- TOP BAR -->
+    <div class="bg-dark-800 text-xs py-2 border-b border-gold-500/20 text-gray-400">
+        <div class="max-w-7xl mx-auto px-4 flex justify-between items-center flex-wrap gap-2">
+            <div class="flex items-center gap-4">
+                <span class="flex items-center gap-1.5"><i class="fa-solid fa-location-dot text-gold-500"></i> Toshkent, Yunusobod tumani (TXY)</span>
+                <span class="hidden md:flex items-center gap-1.5"><i class="fa-solid fa-clock text-gold-500"></i> Har kuni: 10:00 - 23:00</span>
+                <span class="hidden sm:flex items-center gap-1.5 text-emerald-400"><i class="fa-solid fa-mosque"></i> Namozxona mavjud</span>
+            </div>
+            <div class="flex items-center gap-4">
+                <button onclick="openPhoneModal()" class="hover:text-gold-400 transition font-medium text-gray-200 flex items-center gap-1">
+                    <i class="fa-solid fa-phone text-gold-500"></i> +998 99 861 20 20
+                </button>
+                <div class="flex items-center gap-2 pl-3 border-l border-gray-700">
+                    <a href="https://www.instagram.com/mirandi_restaurant/" target="_blank" class="w-6 h-6 rounded-full bg-dark-700 flex items-center justify-center hover:bg-gold-500 hover:text-dark-900 transition"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="https://t.me/mirandi_restaurant" target="_blank" class="w-6 h-6 rounded-full bg-dark-700 flex items-center justify-center hover:bg-gold-500 hover:text-dark-900 transition"><i class="fa-brands fa-telegram"></i></a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- NAVBAR -->
+    <header class="sticky top-0 z-40 glass-panel border-b border-gold-500/20">
+        <div class="max-w-7xl mx-auto px-4 py-3 flex items-center justify-between">
+            <!-- Brand Logo -->
+            <a href="#" class="flex items-center gap-3 group">
+                <div class="w-11 h-11 rounded-full bg-gradient-to-br from-gold-400 to-gold-700 flex items-center justify-center shadow-lg shadow-gold-500/20 group-hover:scale-105 transition">
+                    <span class="font-serif font-bold text-xl text-dark-900 tracking-tighter">M</span>
+                </div>
+                <div>
+                    <span class="font-serif font-bold text-2xl tracking-wide gold-gradient-text block leading-none">MIRANDI</span>
+                    <span class="text-[10px] tracking-[0.25em] text-gold-400 uppercase block mt-1">RESTAURANT & BANKET ZAL</span>
+                </div>
+            </a>
+
+            <!-- Nav Links -->
+            <nav class="hidden md:flex items-center gap-7 text-sm font-medium tracking-wide">
+                <a href="#about" class="hover:text-gold-400 transition">Biz Haqimizda</a>
+                <a href="#menu" class="hover:text-gold-400 transition">Taomnoma</a>
+                <a href="#banquet" class="hover:text-gold-400 transition">Banket va To'ylar</a>
+                <a href="#features" class="hover:text-gold-400 transition">Afzalliklar</a>
+                <a href="#reviews" class="hover:text-gold-400 transition">Sharhlar</a>
+                <a href="#contact" class="hover:text-gold-400 transition">Manzil</a>
+            </nav>
+
+            <!-- Actions -->
+            <div class="flex items-center gap-3">
+                <button onclick="openPhoneModal()" class="hidden sm:inline-flex items-center gap-2 bg-gradient-to-r from-gold-500 to-gold-600 hover:from-gold-400 hover:to-gold-500 text-dark-900 px-5 py-2.5 rounded-full font-semibold text-xs tracking-wider uppercase transition shadow-lg shadow-gold-500/20">
+                    <i class="fa-solid fa-phone text-sm"></i>
+                    +998 99 861 20 20
+                </button>
+                <button id="mobile-menu-btn" class="md:hidden text-gray-300 hover:text-gold-400 text-xl p-2">
+                    <i class="fa-solid fa-bars"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobile Menu Dropdown -->
+        <div id="mobile-menu" class="hidden md:hidden border-t border-gold-500/20 bg-dark-800 px-4 py-4 space-y-3">
+            <a href="#about" class="block hover:text-gold-400 py-1">Biz Haqimizda</a>
+            <a href="#menu" class="block hover:text-gold-400 py-1">Taomnoma</a>
+            <a href="#banquet" class="block hover:text-gold-400 py-1">Banket va To'ylar</a>
+            <a href="#features" class="block hover:text-gold-400 py-1">Afzalliklar</a>
+            <a href="#reviews" class="block hover:text-gold-400 py-1">Sharhlar</a>
+            <a href="#contact" class="block hover:text-gold-400 py-1">Manzil</a>
+            <button onclick="openPhoneModal()" class="w-full mt-2 inline-block text-center bg-gradient-to-r from-gold-500 to-gold-600 text-dark-900 py-2.5 rounded-full font-semibold text-xs tracking-wider uppercase">
+                <i class="fa-solid fa-phone mr-1"></i> +998 99 861 20 20 Qo'ng'iroq Qilish
+            </button>
+        </div>
+    </header>
+
+    <!-- HERO SECTION -->
+    <section class="relative min-h-[75vh] flex items-center justify-center overflow-hidden bg-dark-900 py-16">
+        <div class="absolute inset-0 z-0 bg-[url('https://images.unsplash.com/photo-1544025162-d76694265947?q=80&w=1600&auto=format&fit=crop')] bg-cover bg-center opacity-20"></div>
+        <div class="absolute inset-0 bg-gradient-to-t from-dark-900 via-dark-900/80 to-transparent z-0"></div>
+
+        <div class="relative z-10 max-w-5xl mx-auto px-4 text-center space-y-6">
+            <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-gold-500/10 border border-gold-500/30 text-gold-400 text-xs font-semibold uppercase tracking-widest animate-pulse">
+                <i class="fa-solid fa-star text-gold-400"></i> Toshkentdagi Premium Restoran & Banket Zali
+            </div>
+            
+            <h1 class="font-serif text-3xl sm:text-5xl md:text-6xl font-bold leading-tight tracking-tight">
+                Shoxona Milliy va Sharq <br>
+                <span class="gold-gradient-text italic font-normal">Taomlari Maskani</span>
+            </h1>
+
+            <p class="max-w-2xl mx-auto text-gray-300 text-sm sm:text-base leading-relaxed font-light">
+                Mirandi Restaurant — Oila a'zolaringiz va yaqinlaringiz bilan unutilmas lahzalarni baham ko'radigan, shoxona Milliy, Arab va Yevropa oshxonasining sara shoh asarlari jamlangan go'sha.
+            </p>
+
+            <div class="pt-4 flex flex-col sm:flex-row justify-center items-center gap-4">
+                <a href="#menu" class="w-full sm:w-auto px-8 py-3.5 rounded-full bg-gradient-to-r from-gold-500 to-gold-600 hover:from-gold-400 hover:to-gold-500 text-dark-900 font-semibold text-xs tracking-wider uppercase shadow-xl shadow-gold-500/20 transition transform hover:-translate-y-0.5">
+                    <i class="fa-solid fa-utensils mr-2"></i> Taomnomani Ko'rish
+                </a>
+                <button onclick="openPhoneModal()" class="w-full sm:w-auto px-8 py-3.5 rounded-full glass-panel hover:bg-dark-700 text-gold-300 border border-gold-500/40 font-semibold text-xs tracking-wider uppercase transition">
+                    <i class="fa-solid fa-phone mr-2"></i> Bron Uchun Qo'ng'iroq Qilish
+                </button>
+            </div>
+
+            <!-- Highlights Rating Bar -->
+            <div class="pt-10 grid grid-cols-2 md:grid-cols-4 gap-4 max-w-4xl mx-auto">
+                <div onclick="openReviewsModal()" class="glass-panel-light p-4 rounded-xl text-center cursor-pointer hover:border-gold-500/40 transition">
+                    <div class="text-gold-400 font-serif text-2xl font-bold flex items-center justify-center gap-1">
+                        4.3 <i class="fa-solid fa-star text-sm"></i>
+                    </div>
+                    <div class="text-xs text-gray-400 mt-1">Google Maps (172+ Sharh)</div>
+                </div>
+                <div class="glass-panel-light p-4 rounded-xl text-center">
+                    <div class="text-gold-400 font-serif text-2xl font-bold">300+</div>
+                    <div class="text-xs text-gray-400 mt-1">Banket Zal Sig'imi</div>
+                </div>
+                <div class="glass-panel-light p-4 rounded-xl text-center">
+                    <div class="text-gold-400 font-serif text-2xl font-bold">100%</div>
+                    <div class="text-xs text-gray-400 mt-1">Halol Masalliqlar</div>
+                </div>
+                <div class="glass-panel-light p-4 rounded-xl text-center">
+                    <div class="text-gold-400 font-serif text-2xl font-bold flex items-center justify-center">
+                        <i class="fa-solid fa-mosque"></i>
+                    </div>
+                    <div class="text-xs text-gray-400 mt-1">Alohida Namozxona</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ABOUT SECTION -->
+    <section id="about" class="py-16 bg-dark-800 border-y border-gold-500/10">
+        <div class="max-w-7xl mx-auto px-4 grid md:grid-cols-2 gap-12 items-center">
+            <div class="relative">
+                <div onclick="openLightbox(0)" class="relative z-10 rounded-2xl overflow-hidden border border-gold-500/30 shadow-2xl cursor-pointer group">
+                    <img src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?q=80&w=1000&auto=format&fit=crop" alt="Mirandi Restaurant Interior" class="w-full h-[360px] object-cover group-hover:scale-105 transition duration-700">
+                    <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition flex items-center justify-center text-white text-xs font-semibold gap-2">
+                        <i class="fa-solid fa-expand text-base"></i> Katta formatda ko'rish
+                    </div>
+                </div>
+            </div>
+
+            <div class="space-y-5">
+                <span class="text-gold-400 text-xs font-semibold tracking-widest uppercase border-b border-gold-500/40 pb-1">Haqimizda</span>
+                <h2 class="font-serif text-3xl font-bold">Mirandi Restaurant — Oliy Diddagi Taomlar va Shinamlik Maskani</h2>
+                <p class="text-gray-300 leading-relaxed text-sm font-light">
+                    Mirandi Restorani Toshkent shahri Yunusobod tumanida joylashgan bo'lib, o'zining muhtasham interyeri, xushmuomala xodimlari va beqiyos maza beruvchi taomlari bilan tanilgan.
+                </p>
+                <p class="text-gray-400 leading-relaxed text-xs font-light">
+                    Siz bu yerda haqiqiy Toshkent shoxona oshidan bahramand bo'lishingiz, mazali Qozon-Kabob, arabcha Mandi hamda Yevropa uslubidagi yangi salatlardan tatib ko'rishingiz mumkin.
+                </p>
+
+                <div class="pt-2 flex flex-wrap gap-3">
+                    <button onclick="openPhoneModal()" class="px-6 py-2.5 rounded-full bg-gold-500 text-dark-900 font-semibold text-xs uppercase tracking-wider hover:bg-gold-400 transition flex items-center gap-2">
+                        <i class="fa-solid fa-phone"></i> +998 99 861 20 20
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FULL EXPANDED MENU SECTION WITH SLIDER MODAL -->
+    <section id="menu" class="py-20 bg-dark-900">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="text-center space-y-3 mb-12">
+                <span class="text-gold-400 text-xs font-semibold tracking-widest uppercase border-b border-gold-500/40 pb-1">Kengaytirilgan Taomnoma</span>
+                <h2 class="font-serif text-3xl sm:text-5xl font-bold">Bizning Sara Taomlarimiz</h2>
+                <p class="text-gray-400 max-w-xl mx-auto text-xs sm:text-sm">Har bir taom ustiga bosing — ochilgan oynada taomlarni yonga surib (&larr; &rarr; swipe) navbatma-navbat ko'rishingiz mumkin</p>
+            </div>
+
+            <!-- Menu Category Filter Tabs -->
+            <div class="flex items-center justify-start sm:justify-center gap-2 overflow-x-auto pb-4 mb-8 custom-scrollbar">
+                <button onclick="filterMenu('all')" class="menu-tab active px-5 py-2.5 rounded-full text-xs font-semibold tracking-wider uppercase transition border border-gold-500 bg-gold-500 text-dark-900 whitespace-nowrap">
+                    Hammasi
+                </button>
+                <button onclick="filterMenu('national')" class="menu-tab px-5 py-2.5 rounded-full text-xs font-semibold tracking-wider uppercase transition border border-gold-500/30 text-gray-300 hover:border-gold-500 hover:text-gold-400 whitespace-nowrap">
+                    Milliy Taomlar
+                </button>
+                <button onclick="filterMenu('kebabs')" class="menu-tab px-5 py-2.5 rounded-full text-xs font-semibold tracking-wider uppercase transition border border-gold-500/30 text-gray-300 hover:border-gold-500 hover:text-gold-400 whitespace-nowrap">
+                    Kabob & Grill
+                </button>
+                <button onclick="filterMenu('salads')" class="menu-tab px-5 py-2.5 rounded-full text-xs font-semibold tracking-wider uppercase transition border border-gold-500/30 text-gray-300 hover:border-gold-500 hover:text-gold-400 whitespace-nowrap">
+                    Salat & Sho'rvalar
+                </button>
+                <button onclick="filterMenu('drinks')" class="menu-tab px-5 py-2.5 rounded-full text-xs font-semibold tracking-wider uppercase transition border border-gold-500/30 text-gray-300 hover:border-gold-500 hover:text-gold-400 whitespace-nowrap">
+                    Shirinlik & Ichimliklar
+                </button>
+            </div>
+
+            <!-- Menu Grid -->
+            <div id="menu-grid" class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+
+                <!-- Dish items generated dynamically with onclick="openDishModal(index)" -->
+                <div onclick="openDishModal(0)" class="menu-item national glass-panel rounded-2xl overflow-hidden group border border-gold-500/20 hover:border-gold-500/60 transition duration-300 cursor-pointer">
+                    <div class="relative h-48 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1633964913295-ceb43826e7c9?q=80&w=600&auto=format&fit=crop" alt="Mirandi Shoxona Osh" class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
+                        <span class="absolute top-3 right-3 bg-gold-500 text-dark-900 text-[10px] font-bold uppercase tracking-wider px-2.5 py-1 rounded-full">Hit Taom</span>
+                    </div>
+                    <div class="p-5 space-y-2.5">
+                        <div class="flex justify-between items-start">
+                            <h3 class="font-serif text-lg font-bold text-gray-100 group-hover:text-gold-400 transition">Mirandi Shoxona Osh</h3>
+                            <span class="text-gold-400 font-bold text-base whitespace-nowrap">65,000 so'm</span>
+                        </div>
+                        <p class="text-gray-400 text-xs line-clamp-2">Bedana tuxumi, qazi, noxat va kishmish qo'shilgan shoxona Toshkent oshi.</p>
+                        <div class="pt-3 border-t border-gray-800 flex justify-between items-center text-xs text-gold-400 font-semibold uppercase tracking-wider">
+                            <span>Tarkibi va Slayder &rarr;</span>
+                            <i class="fa-solid fa-arrows-left-right"></i>
+                        </div>
+                    </div>
+                </div>
+
+                <div onclick="openDishModal(1)" class="menu-item national glass-panel rounded-2xl overflow-hidden group border border-gold-500/20 hover:border-gold-500/60 transition duration-300 cursor-pointer">
+                    <div class="relative h-48 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1544025162-d76694265947?q=80&w=600&auto=format&fit=crop" alt="Qozon Kabob" class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
+                    </div>
+                    <div class="p-5 space-y-2.5">
+                        <div class="flex justify-between items-start">
+                            <h3 class="font-serif text-lg font-bold text-gray-100 group-hover:text-gold-400 transition">Maxsus Qozon-Kabob</h3>
+                            <span class="text-gold-400 font-bold text-base whitespace-nowrap">85,000 so'm</span>
+                        </div>
+                        <p class="text-gray-400 text-xs line-clamp-2">Qozonda pishirilgan yumshoq qo'y qovurg'alari va oltin kartoshka.</p>
+                        <div class="pt-3 border-t border-gray-800 flex justify-between items-center text-xs text-gold-400 font-semibold uppercase tracking-wider">
+                            <span>Tarkibi va Slayder &rarr;</span>
+                            <i class="fa-solid fa-arrows-left-right"></i>
+                        </div>
+                    </div>
+                </div>
+
+                <div onclick="openDishModal(2)" class="menu-item national glass-panel rounded-2xl overflow-hidden group border border-gold-500/20 hover:border-gold-500/60 transition duration-300 cursor-pointer">
+                    <div class="relative h-48 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1529042410759-befb1204b468?q=80&w=600&auto=format&fit=crop" alt="Chicken Mandi" class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
+                    </div>
+                    <div class="p-5 space-y-2.5">
+                        <div class="flex justify-between items-start">
+                            <h3 class="font-serif text-lg font-bold text-gray-100 group-hover:text-gold-400 transition">Chicken Mandi</h3>
+                            <span class="text-gold-400 font-bold text-base whitespace-nowrap">75,000 so'm</span>
+                        </div>
+                        <p class="text-gray-400 text-xs line-clamp-2">Sharq ziravorlarida pishirilgan tovuq va Basmati guruchi.</p>
+                        <div class="pt-3 border-t border-gray-800 flex justify-between items-center text-xs text-gold-400 font-semibold uppercase tracking-wider">
+                            <span>Tarkibi va Slayder &rarr;</span>
+                            <i class="fa-solid fa-arrows-left-right"></i>
+                        </div>
+                    </div>
+                </div>
+
+                <div onclick="openDishModal(3)" class="menu-item kebabs glass-panel rounded-2xl overflow-hidden group border border-gold-500/20 hover:border-gold-500/60 transition duration-300 cursor-pointer">
+                    <div class="relative h-48 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1555939594-58d7cb561ad1?q=80&w=600&auto=format&fit=crop" alt="Halabi Kebab Assorti" class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
+                    </div>
+                    <div class="p-5 space-y-2.5">
+                        <div class="flex justify-between items-start">
+                            <h3 class="font-serif text-lg font-bold text-gray-100 group-hover:text-gold-400 transition">Halabi Kebab Assorti</h3>
+                            <span class="text-gold-400 font-bold text-base whitespace-nowrap">110,000 so'm</span>
+                        </div>
+                        <p class="text-gray-400 text-xs line-clamp-2">Mangalda ko'mirda pishirilgan qiyma va lahm go'shtlar to'plami.</p>
+                        <div class="pt-3 border-t border-gray-800 flex justify-between items-center text-xs text-gold-400 font-semibold uppercase tracking-wider">
+                            <span>Tarkibi va Slayder &rarr;</span>
+                            <i class="fa-solid fa-arrows-left-right"></i>
+                        </div>
+                    </div>
+                </div>
+
+                <div onclick="openDishModal(4)" class="menu-item kebabs glass-panel rounded-2xl overflow-hidden group border border-gold-500/20 hover:border-gold-500/60 transition duration-300 cursor-pointer">
+                    <div class="relative h-48 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1544025162-d76694265947?q=80&w=600&auto=format&fit=crop" alt="Lamb Ribs Shashlik" class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
+                    </div>
+                    <div class="p-5 space-y-2.5">
+                        <div class="flex justify-between items-start">
+                            <h3 class="font-serif text-lg font-bold text-gray-100 group-hover:text-gold-400 transition">Qo'y Qovurg'a Shashlik</h3>
+                            <span class="text-gold-400 font-bold text-base whitespace-nowrap">32,000 so'm</span>
+                        </div>
+                        <p class="text-gray-400 text-xs line-clamp-2">Sharqona ziravorlar bilan marinovka qilingan maza beruvchi qovurg'a.</p>
+                        <div class="pt-3 border-t border-gray-800 flex justify-between items-center text-xs text-gold-400 font-semibold uppercase tracking-wider">
+                            <span>Tarkibi va Slayder &rarr;</span>
+                            <i class="fa-solid fa-arrows-left-right"></i>
+                        </div>
+                    </div>
+                </div>
+
+                <div onclick="openDishModal(5)" class="menu-item salads glass-panel rounded-2xl overflow-hidden group border border-gold-500/20 hover:border-gold-500/60 transition duration-300 cursor-pointer">
+                    <div class="relative h-48 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1540420773420-3366772f4999?q=80&w=600&auto=format&fit=crop" alt="Greek Salad" class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
+                    </div>
+                    <div class="p-5 space-y-2.5">
+                        <div class="flex justify-between items-start">
+                            <h3 class="font-serif text-lg font-bold text-gray-100 group-hover:text-gold-400 transition">Yevropacha Grek Salati</h3>
+                            <span class="text-gold-400 font-bold text-base whitespace-nowrap">42,000 so'm</span>
+                        </div>
+                        <p class="text-gray-400 text-xs line-clamp-2">Yangi bodring, pomidor, Feta pishlog'i va Zaytun yog'i sousi.</p>
+                        <div class="pt-3 border-t border-gray-800 flex justify-between items-center text-xs text-gold-400 font-semibold uppercase tracking-wider">
+                            <span>Tarkibi va Slayder &rarr;</span>
+                            <i class="fa-solid fa-arrows-left-right"></i>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- BANQUET & WEDDING SECTION WITH AUTHENTIC SLIDER GALLERY -->
+    <section id="banquet" class="py-20 bg-dark-800 border-t border-gold-500/20">
+        <div class="max-w-7xl mx-auto px-4 grid lg:grid-cols-2 gap-12 items-center">
+            <div class="space-y-6">
+                <span class="text-gold-400 text-xs font-semibold tracking-widest uppercase border-b border-gold-500/40 pb-1">Mirandi Wedding Studio & Banquet</span>
+                <h2 class="font-serif text-3xl sm:text-5xl font-bold leading-tight">
+                    To'ylar va Marosimlar uchun Muhtasham Zallar
+                </h2>
+                <p class="text-gray-300 text-sm leading-relaxed font-light">
+                    Sizning eng muhim va quvonchli kunlaringiz uchun Mirandi Restorani 50 kishidan 300+ kishigacha mo'ljallangan muhtasham banket zallarini taqdim etadi. Rasmiy fotosuratlar ustiga bosib katta formatli slayderda tomosha qiling.
+                </p>
+
+                <div class="space-y-4">
+                    <div class="flex items-start gap-3">
+                        <div class="w-8 h-8 rounded-full bg-gold-500/20 text-gold-400 flex items-center justify-center shrink-0 mt-1">
+                            <i class="fa-solid fa-check text-xs"></i>
+                        </div>
+                        <div>
+                            <h4 class="text-sm font-semibold text-gray-200">Nahorgi Osh va Marosimlar</h4>
+                            <p class="text-xs text-gray-400">Tonggi shoxona osh tadbirlari uchun barcha qulayliklar.</p>
+                        </div>
+                    </div>
+
+                    <div class="flex items-start gap-3">
+                        <div class="w-8 h-8 rounded-full bg-gold-500/20 text-gold-400 flex items-center justify-center shrink-0 mt-1">
+                            <i class="fa-solid fa-check text-xs"></i>
+                        </div>
+                        <div>
+                            <h4 class="text-sm font-semibold text-gray-200">Nikoh To'ylari va Yubileylar</h4>
+                            <p class="text-xs text-gray-400">Muhtasham dekoratsiyalar va professional audio-musiqa tizimi.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="pt-4 flex flex-wrap gap-4">
+                    <button onclick="openPhoneModal()" class="px-8 py-3.5 rounded-full bg-gradient-to-r from-gold-500 to-gold-600 hover:from-gold-400 hover:to-gold-500 text-dark-900 font-semibold text-xs tracking-wider uppercase shadow-lg shadow-gold-500/20 transition flex items-center gap-2">
+                        <i class="fa-solid fa-phone"></i> Menejer Bilan Bog'lanish
+                    </button>
+                </div>
+            </div>
+
+            <!-- Authentic Banquet Photos Grid with Lightbox Slider trigger -->
+            <div class="grid grid-cols-2 gap-4">
+                <div class="space-y-4">
+                    <div onclick="openLightbox(0)" class="rounded-2xl overflow-hidden border border-gold-500/30 h-56 shadow-xl cursor-pointer group relative">
+                        <img src="https://images.unsplash.com/photo-1519167758481-83f550bb49b3?q=80&w=1000&auto=format&fit=crop" alt="Mirandi Banquet Hall Main" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                        <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition flex items-center justify-center text-white text-xs font-semibold gap-1">
+                            <i class="fa-solid fa-magnifying-glass-plus"></i> Katta formatda ko'rish
+                        </div>
+                    </div>
+                    <div onclick="openLightbox(1)" class="rounded-2xl overflow-hidden border border-gold-500/30 h-40 shadow-xl cursor-pointer group relative">
+                        <img src="https://images.unsplash.com/photo-1464366400600-7168b8af9bc3?q=80&w=1000&auto=format&fit=crop" alt="Banquet Table Setting" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                        <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition flex items-center justify-center text-white text-xs font-semibold gap-1">
+                            <i class="fa-solid fa-magnifying-glass-plus"></i> Katta formatda ko'rish
+                        </div>
+                    </div>
+                </div>
+
+                <div class="space-y-4 pt-6">
+                    <div onclick="openLightbox(2)" class="rounded-2xl overflow-hidden border border-gold-500/30 h-40 shadow-xl cursor-pointer group relative">
+                        <img src="https://images.unsplash.com/photo-1511795409834-ef04bbd61622?q=80&w=1000&auto=format&fit=crop" alt="Wedding Hall Interior" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                        <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition flex items-center justify-center text-white text-xs font-semibold gap-1">
+                            <i class="fa-solid fa-magnifying-glass-plus"></i> Katta formatda ko'rish
+                        </div>
+                    </div>
+                    <div onclick="openLightbox(3)" class="rounded-2xl overflow-hidden border border-gold-500/30 h-56 shadow-xl cursor-pointer group relative">
+                        <img src="https://images.unsplash.com/photo-1530103862676-de8c9debad1d?q=80&w=1000&auto=format&fit=crop" alt="Evening Event Ambiance" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                        <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition flex items-center justify-center text-white text-xs font-semibold gap-1">
+                            <i class="fa-solid fa-magnifying-glass-plus"></i> Katta formatda ko'rish
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FEATURES SECTION (CLEAN ELEGANT TEXTUAL CARDS WITHOUT PHOTO POPUPS) -->
+    <section id="features" class="py-20 bg-dark-900">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="text-center space-y-3 mb-16">
+                <span class="text-gold-400 text-xs font-semibold tracking-widest uppercase border-b border-gold-500/40 pb-1">Bizning Afzalliklarimiz</span>
+                <h2 class="font-serif text-3xl sm:text-5xl font-bold">Nega Aynan Mirandi?</h2>
+            </div>
+
+            <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+
+                <!-- Feature 1: Namozxona -->
+                <div class="glass-panel p-6 rounded-2xl text-center space-y-4 hover:border-gold-500/60 transition group">
+                    <div class="w-14 h-14 mx-auto rounded-full bg-gold-500/10 border border-gold-500/30 flex items-center justify-center text-gold-400 text-2xl group-hover:scale-110 transition">
+                        <i class="fa-solid fa-mosque"></i>
+                    </div>
+                    <h3 class="font-serif text-lg font-bold text-gray-100">Namozxona</h3>
+                    <p class="text-xs text-gray-400 leading-relaxed">Erkaklar va ayollar uchun alohida, toza va barcha tahorat va ibodat sharoitlariga ega bo'lgan ozoda xona.</p>
+                </div>
+
+                <!-- Feature 2: Bolalar Maydonchasi -->
+                <div class="glass-panel p-6 rounded-2xl text-center space-y-4 hover:border-gold-500/60 transition group">
+                    <div class="w-14 h-14 mx-auto rounded-full bg-gold-500/10 border border-gold-500/30 flex items-center justify-center text-gold-400 text-2xl group-hover:scale-110 transition">
+                        <i class="fa-solid fa-child-reaching"></i>
+                    </div>
+                    <h3 class="font-serif text-lg font-bold text-gray-100">Bolalar Maydonchasi</h3>
+                    <p class="text-xs text-gray-400 leading-relaxed">Kichkintoy farzandlaringiz vaqti maroqli va xavfsiz o'tishi uchun maxsus o'yin hududi.</p>
+                </div>
+
+                <!-- Feature 3: Yetkazib Berish -->
+                <div class="glass-panel p-6 rounded-2xl text-center space-y-4 hover:border-gold-500/60 transition group">
+                    <div class="w-14 h-14 mx-auto rounded-full bg-gold-500/10 border border-gold-500/30 flex items-center justify-center text-gold-400 text-2xl group-hover:scale-110 transition">
+                        <i class="fa-solid fa-truck-fast"></i>
+                    </div>
+                    <h3 class="font-serif text-lg font-bold text-gray-100">Tezkor Yetkazib Berish</h3>
+                    <p class="text-xs text-gray-400 leading-relaxed">Mirandi Restoranining issiq taomlarini Toshkent shahri bo'ylab uyingizga tez yetkazamiz.</p>
+                </div>
+
+                <!-- Feature 4: Avtoturargoh -->
+                <div class="glass-panel p-6 rounded-2xl text-center space-y-4 hover:border-gold-500/60 transition group">
+                    <div class="w-14 h-14 mx-auto rounded-full bg-gold-500/10 border border-gold-500/30 flex items-center justify-center text-gold-400 text-2xl group-hover:scale-110 transition">
+                        <i class="fa-solid fa-square-parking"></i>
+                    </div>
+                    <h3 class="font-serif text-lg font-bold text-gray-100">Keng Avtoturargoh</h3>
+                    <p class="text-xs text-gray-400 leading-relaxed">Mehmonlarimiz uchun tekin, keng va nazorat ostidagi xavfsiz avtoturargoh.</p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- REVIEWS SECTION -->
+    <section id="reviews" class="py-20 bg-dark-800 border-t border-gold-500/10">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="text-center space-y-3 mb-16">
+                <span class="text-gold-400 text-xs font-semibold tracking-widest uppercase border-b border-gold-500/40 pb-1">Mijozlarimiz Fikri</span>
+                <h2 class="font-serif text-3xl sm:text-5xl font-bold">Google & Yandex Sharhlari</h2>
+                <p class="text-gray-400 max-w-xl mx-auto text-xs sm:text-sm">Mehmonlarimiz tomonidan qoldirilgan samimiy baholar</p>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="glass-panel p-6 rounded-2xl space-y-4 border border-gold-500/20">
+                    <div class="flex items-center gap-1 text-gold-400 text-sm">
+                        <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                    </div>
+                    <p class="text-gray-300 text-xs leading-relaxed italic">
+                        "Ресторан оставил отличные впечатления! Вкуснейшая еда, приемлемые цены, и невероятно вежливый персонал. Особенно запомнилась чайхана: плов и казан-кабоб просто бесподобны!"
+                    </p>
+                    <div class="flex items-center gap-3 pt-2 border-t border-gray-800">
+                        <div class="w-9 h-9 rounded-full bg-gold-500/20 text-gold-400 flex items-center justify-center font-bold text-xs">AM</div>
+                        <div>
+                            <h4 class="text-xs font-bold text-gray-200">Abboskhon Malikov</h4>
+                            <span class="text-[10px] text-gray-400">Mahalliy Ekspert</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="glass-panel p-6 rounded-2xl space-y-4 border border-gold-500/20">
+                    <div class="flex items-center gap-1 text-gold-400 text-sm">
+                        <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                    </div>
+                    <p class="text-gray-300 text-xs leading-relaxed italic">
+                        "Juda ham chiroyli maskan. Ayniqsa oilamiz bilan kelganimizda namozxona mavjudligi juda quvontirdi. Taomlari mazali, kapuchino va milliy oshlariga gap yo'q!"
+                    </p>
+                    <div class="flex items-center gap-3 pt-2 border-t border-gray-800">
+                        <div class="w-9 h-9 rounded-full bg-gold-500/20 text-gold-400 flex items-center justify-center font-bold text-xs">ShA</div>
+                        <div>
+                            <h4 class="text-xs font-bold text-gray-200">Shahnoza Anvarovna</h4>
+                            <span class="text-[10px] text-gray-400">Mahalliy Ekspert</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="glass-panel p-6 rounded-2xl space-y-4 border border-gold-500/20">
+                    <div class="flex items-center gap-1 text-gold-400 text-sm">
+                        <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-regular fa-star"></i>
+                    </div>
+                    <p class="text-gray-300 text-xs leading-relaxed italic">
+                        "Хорошее место для проведения мероприятий и банкетов. Разнообразное меню. Красивый интерьер и дизайн."
+                    </p>
+                    <div class="flex items-center gap-3 pt-2 border-t border-gray-800">
+                        <div class="w-9 h-9 rounded-full bg-gold-500/20 text-gold-400 flex items-center justify-center font-bold text-xs">LCh</div>
+                        <div>
+                            <h4 class="text-xs font-bold text-gray-200">Leyla Chibranova</h4>
+                            <span class="text-[10px] text-gray-400">Sharhlovchi</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- IN-PAGE ALL REVIEWS & ADD REVIEW BUTTONS -->
+            <div class="mt-12 text-center flex flex-wrap justify-center gap-4">
+                <button onclick="openReviewsModal()" class="glass-panel px-7 py-3 rounded-full text-gold-400 hover:text-gold-300 text-xs font-semibold tracking-wider uppercase border border-gold-500/40 hover:bg-dark-700 transition flex items-center gap-2">
+                    <i class="fa-solid fa-comments text-sm"></i> Barcha Sharhlarni Ko'rish (172+)
+                </button>
+                <button onclick="toggleAddReviewForm()" class="bg-gold-500 text-dark-900 px-7 py-3 rounded-full font-semibold text-xs tracking-wider uppercase hover:bg-gold-400 transition flex items-center gap-2 shadow-lg shadow-gold-500/20">
+                    <i class="fa-solid fa-pen-to-square"></i> Sharh Qo'shish
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- CONTACT & MAP SECTION -->
+    <section id="contact" class="py-20 bg-dark-900">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="grid lg:grid-cols-2 gap-12 items-center">
+                <div class="space-y-6">
+                    <span class="text-gold-400 text-xs font-semibold tracking-widest uppercase border-b border-gold-500/40 pb-1">Biz Bilan Bog'lanish</span>
+                    <h2 class="font-serif text-3xl sm:text-5xl font-bold">Bizni Ziyorat Qiling</h2>
+                    <p class="text-gray-400 text-sm font-light leading-relaxed">
+                        Toshkent shahri Yunusobod tumanida joylashgan Mirandi Restoraniga marhamat qiling. Doimiy bog'lanish va telefon orqali oldindan stol band qilish imkoniyati mavjud.
+                    </p>
+
+                    <div class="space-y-4 pt-2">
+                        <div class="flex items-start gap-4">
+                            <div class="w-10 h-10 rounded-xl bg-gold-500/10 border border-gold-500/30 flex items-center justify-center text-gold-400 shrink-0">
+                                <i class="fa-solid fa-location-dot"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-sm font-semibold text-gray-200">Manzil:</h4>
+                                <p class="text-xs text-gray-400">98HC+3FR, 100000, Toshkent shahri, Toshkent, Oʻzbekiston (TXY)</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start gap-4">
+                            <div class="w-10 h-10 rounded-xl bg-gold-500/10 border border-gold-500/30 flex items-center justify-center text-gold-400 shrink-0">
+                                <i class="fa-solid fa-phone"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-sm font-semibold text-gray-200">Bog'lanish telefoni:</h4>
+                                <button onclick="openPhoneModal()" class="text-gold-400 font-bold text-sm hover:underline block">+998 99 861 20 20</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="flex items-center gap-3 pt-4">
+                        <button onclick="openPhoneModal()" class="px-6 py-3 rounded-full bg-gold-500 text-dark-900 font-semibold text-xs uppercase tracking-wider hover:bg-gold-400 transition flex items-center gap-2">
+                            <i class="fa-solid fa-phone"></i> Qo'ng'iroq Qilish
+                        </button>
+                    </div>
+                </div>
+
+                <div class="glass-panel p-3 rounded-3xl border border-gold-500/30 overflow-hidden shadow-2xl">
+                    <iframe class="w-full h-[380px] rounded-2xl filter grayscale contrast-125 hover:grayscale-0 transition duration-500" 
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2994.484251235123!2d69.3211524!3d41.3777491!2m3!1f0!f0!f0!m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x38aef3eca14f685b%3A0xd2dc23a047e926ed!2sMirandi%20Restaurant!5e0!3m2!1suz!2s!4v1700000000000!5m2!1suz!2s" 
+                        style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER WITH INSTAGRAM, TELEGRAM & PRIVACY POLICY -->
+    <footer class="bg-dark-900 border-t border-gold-500/20 py-12 text-gray-400 text-xs">
+        <div class="max-w-7xl mx-auto px-4 flex flex-col md:flex-row items-center justify-between gap-6">
+            <div class="flex items-center gap-3">
+                <div class="w-8 h-8 rounded-full bg-gradient-to-br from-gold-400 to-gold-700 flex items-center justify-center font-serif font-bold text-dark-900">
+                    M
+                </div>
+                <div>
+                    <span class="font-serif font-bold text-lg gold-gradient-text">MIRANDI</span>
+                    <p class="text-[10px] text-gray-500">© 2026 Mirandi Restaurant & Banquet Hall. Barcha huquqlar himoyalangan.</p>
+                </div>
+            </div>
+
+            <div class="flex flex-wrap items-center justify-center gap-6 text-gray-400">
+                <a href="https://www.instagram.com/mirandi_restaurant/" target="_blank" class="hover:text-gold-400 transition flex items-center gap-1.5 font-medium">
+                    <i class="fa-brands fa-instagram text-gold-400 text-sm"></i> @mirandi_restaurant
+                </a>
+                <a href="https://t.me/mirandi_restaurant" target="_blank" class="hover:text-gold-400 transition flex items-center gap-1.5 font-medium">
+                    <i class="fa-brands fa-telegram text-gold-400 text-sm"></i> @mirandi_restaurant
+                </a>
+                <button onclick="openPrivacyModal()" class="hover:text-gold-400 transition underline decoration-gold-500/40">
+                    Maxfiylik va Xavfsizlik Siyosati
+                </button>
+            </div>
+        </div>
+    </footer>
+
+    <!-- MOBILE FLOATING ACTION BAR -->
+    <div class="fixed bottom-0 left-0 right-0 z-40 bg-dark-800/95 backdrop-blur-lg border-t border-gold-500/30 px-4 py-2.5 flex items-center justify-around md:hidden text-gray-300">
+        <a href="#menu" class="flex flex-col items-center gap-1 text-[10px] hover:text-gold-400">
+            <i class="fa-solid fa-utensils text-base"></i>
+            <span>Taomnoma</span>
+        </a>
+        <button onclick="openPhoneModal()" class="flex flex-col items-center gap-1 text-[10px] text-gold-400 font-bold">
+            <div class="w-9 h-9 rounded-full bg-gold-500 text-dark-900 flex items-center justify-center shadow-lg -mt-4">
+                <i class="fa-solid fa-phone text-sm"></i>
+            </div>
+            <span>Qo'ng'iroq</span>
+        </button>
+        <a href="#contact" class="flex flex-col items-center gap-1 text-[10px] hover:text-gold-400">
+            <i class="fa-solid fa-map-location-dot text-base"></i>
+            <span>Manzil</span>
+        </a>
+    </div>
+
+    <!-- MODAL 1: DISH SLIDER WITH PREV/NEXT & TOUCH SWIPE -->
+    <div id="dish-modal" class="fixed inset-0 z-50 hidden items-center justify-center bg-black/85 backdrop-blur-md p-4">
+        <div id="dish-modal-card" class="glass-panel max-w-lg w-full rounded-3xl overflow-hidden border border-gold-500/40 relative shadow-2xl modal-animate-in max-h-[90vh] flex flex-col">
+            
+            <button onclick="closeDishModal()" class="absolute top-4 right-4 z-20 w-9 h-9 rounded-full bg-black/60 text-gray-300 hover:text-gold-400 flex items-center justify-center text-lg">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+
+            <!-- Previous & Next Navigation Arrows for Desktop -->
+            <button onclick="prevDish()" class="absolute left-3 top-1/2 -translate-y-1/2 z-20 w-10 h-10 rounded-full bg-black/60 hover:bg-gold-500 hover:text-dark-900 text-gray-200 flex items-center justify-center text-base transition shadow-lg">
+                <i class="fa-solid fa-chevron-left"></i>
+            </button>
+            <button onclick="nextDish()" class="absolute right-3 top-1/2 -translate-y-1/2 z-20 w-10 h-10 rounded-full bg-black/60 hover:bg-gold-500 hover:text-dark-900 text-gray-200 flex items-center justify-center text-base transition shadow-lg">
+                <i class="fa-solid fa-chevron-right"></i>
+            </button>
+
+            <div class="relative h-60 sm:h-64 overflow-hidden shrink-0">
+                <img id="dish-modal-img" src="" alt="" class="w-full h-full object-cover transition duration-300">
+                <div class="absolute inset-0 bg-gradient-to-t from-dark-900 via-transparent to-transparent"></div>
+                <span id="dish-modal-badge" class="absolute top-4 left-4 bg-gold-500 text-dark-900 text-[10px] font-bold uppercase tracking-wider px-3 py-1 rounded-full"></span>
+                <span id="dish-modal-counter" class="absolute bottom-3 right-4 bg-dark-900/80 border border-gold-500/30 text-gold-400 text-[11px] font-bold px-2.5 py-0.5 rounded-full"></span>
+            </div>
+
+            <div class="p-6 space-y-4 overflow-y-auto custom-scrollbar flex-1">
+                <div class="flex justify-between items-start gap-2">
+                    <h3 id="dish-modal-title" class="font-serif text-2xl font-bold text-gray-100"></h3>
+                    <span id="dish-modal-price" class="text-gold-400 font-serif text-xl font-bold whitespace-nowrap"></span>
+                </div>
+
+                <div class="space-y-2 text-xs">
+                    <div class="text-gray-300 font-semibold uppercase tracking-wider">Taom Tarkibi (Masalliqlar):</div>
+                    <p id="dish-modal-ingredients" class="text-gray-400 leading-relaxed bg-dark-800/80 p-3.5 rounded-xl border border-gray-800"></p>
+                </div>
+
+                <div class="grid grid-cols-2 gap-3 text-xs">
+                    <div class="bg-dark-800 p-2.5 rounded-xl text-center border border-gray-800">
+                        <span class="text-gray-400 block text-[10px] uppercase">Porsiya</span>
+                        <span id="dish-modal-portion" class="text-gray-200 font-bold"></span>
+                    </div>
+                    <div class="bg-dark-800 p-2.5 rounded-xl text-center border border-gray-800">
+                        <span class="text-gray-400 block text-[10px] uppercase">Tayyorlanish vaqti</span>
+                        <span id="dish-modal-time" class="text-gray-200 font-bold"></span>
+                    </div>
+                </div>
+
+                <div class="pt-2">
+                    <button onclick="openPhoneModal()" class="w-full py-3.5 rounded-xl bg-gradient-to-r from-gold-500 to-gold-600 text-dark-900 font-bold text-xs uppercase tracking-wider hover:from-gold-400 hover:to-gold-500 transition shadow-lg flex items-center justify-center gap-2">
+                        <i class="fa-solid fa-phone"></i> Buyurtma Qilish Uchun Telefon (+998 99 861 20 20)
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- MODAL 2: LIGHTBOX BANQUET SLIDER -->
+    <div id="lightbox-modal" class="fixed inset-0 z-50 hidden items-center justify-center bg-black/90 backdrop-blur-lg p-4">
+        <button onclick="closeLightbox()" class="absolute top-5 right-5 text-gray-300 hover:text-gold-400 text-2xl z-20">
+            <i class="fa-solid fa-xmark"></i>
+        </button>
+
+        <button onclick="prevLightbox()" class="absolute left-4 top-1/2 -translate-y-1/2 z-20 w-12 h-12 rounded-full bg-black/60 hover:bg-gold-500 hover:text-dark-900 text-gray-200 flex items-center justify-center text-lg transition">
+            <i class="fa-solid fa-chevron-left"></i>
+        </button>
+        <button onclick="nextLightbox()" class="absolute right-4 top-1/2 -translate-y-1/2 z-20 w-12 h-12 rounded-full bg-black/60 hover:bg-gold-500 hover:text-dark-900 text-gray-200 flex items-center justify-center text-lg transition">
+            <i class="fa-solid fa-chevron-right"></i>
+        </button>
+
+        <div class="max-w-4xl w-full text-center space-y-3 modal-animate-in">
+            <img id="lightbox-img" src="" alt="" class="max-h-[75vh] mx-auto rounded-2xl border border-gold-500/40 shadow-2xl object-contain">
+            <div class="flex items-center justify-center gap-3">
+                <p id="lightbox-caption" class="text-gold-400 font-serif text-lg font-bold"></p>
+                <span id="lightbox-counter" class="text-gray-400 text-xs border border-gray-700 px-2 py-0.5 rounded-full"></span>
+            </div>
+        </div>
+    </div>
+
+    <!-- MODAL 3: IN-PAGE REVIEWS & ADD REVIEW -->
+    <div id="reviews-modal" class="fixed inset-0 z-50 hidden items-center justify-center bg-black/80 backdrop-blur-md p-4">
+        <div class="glass-panel max-w-2xl w-full rounded-3xl p-6 sm:p-8 border border-gold-500/40 relative shadow-2xl modal-animate-in max-h-[85vh] flex flex-col">
+            <button onclick="closeReviewsModal()" class="absolute top-5 right-5 text-gray-400 hover:text-gold-400 text-xl">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+
+            <div class="text-center space-y-2 mb-4 shrink-0">
+                <h3 class="font-serif text-2xl font-bold text-gray-100">Barcha Sharhlar (Mirandi Restaurant)</h3>
+                <div class="flex items-center justify-center gap-1 text-gold-400 text-base">
+                    <span>4.3</span>
+                    <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star-half-stroke"></i>
+                    <span class="text-xs text-gray-400 ml-1">(172 ta sharh)</span>
+                </div>
+            </div>
+
+            <!-- Add Review Form (Hidden by default, toggleable) -->
+            <div id="add-review-form" class="hidden bg-dark-800 p-4 rounded-2xl border border-gold-500/30 mb-4 space-y-3 text-xs shrink-0">
+                <h4 class="font-bold text-gold-400 text-sm">Yangi Sharh Qoldirish</h4>
+                <div class="grid grid-cols-2 gap-3">
+                    <input id="review-name" type="text" placeholder="Ismingiz" class="bg-dark-900 border border-gray-700 rounded-xl p-2.5 text-gray-200 focus:outline-none focus:border-gold-500">
+                    <select id="review-rating" class="bg-dark-900 border border-gray-700 rounded-xl p-2.5 text-gray-200 focus:outline-none focus:border-gold-500">
+                        <option value="5">5 Yulduz (A'lo)</option>
+                        <option value="4">4 Yulduz (Yaxshi)</option>
+                        <option value="3">3 Yulduz (Qoniqarli)</option>
+                    </select>
+                </div>
+                <textarea id="review-text" rows="2" placeholder="Restoran haqida samimiy fikringizni yozing..." class="w-full bg-dark-900 border border-gray-700 rounded-xl p-2.5 text-gray-200 focus:outline-none focus:border-gold-500"></textarea>
+                <div class="flex justify-end gap-2">
+                    <button onclick="toggleAddReviewForm()" class="px-4 py-2 rounded-xl text-gray-400 hover:text-gray-200">Bekor qilish</button>
+                    <button onclick="submitNewReview()" class="px-5 py-2 rounded-xl bg-gold-500 text-dark-900 font-bold uppercase">Yuborish</button>
+                </div>
+            </div>
+
+            <!-- Reviews Scroll List -->
+            <div id="reviews-list-container" class="space-y-3 overflow-y-auto pr-2 custom-scrollbar flex-1 text-xs">
+                <div class="bg-dark-800 p-4 rounded-xl border border-gray-800 space-y-2">
+                    <div class="flex justify-between items-center">
+                        <span class="font-bold text-gray-200">Abboskhon Malikov (Mahalliy Ekspert)</span>
+                        <span class="text-gold-400">★ ★ ★ ★ ★</span>
+                    </div>
+                    <p class="text-gray-300 leading-relaxed">"Ресторан оставил отличные впечатления! Вкуснейшая еда, приемлемые цены, и невероятно вежливый персонал. Особенно запомнилась чайхана: плов и казан-кабоб просто бесподобны!"</p>
+                </div>
+
+                <div class="bg-dark-800 p-4 rounded-xl border border-gray-800 space-y-2">
+                    <div class="flex justify-between items-center">
+                        <span class="font-bold text-gray-200">Shahnoza Anvarovna</span>
+                        <span class="text-gold-400">★ ★ ★ ★ ★</span>
+                    </div>
+                    <p class="text-gray-300 leading-relaxed">"Juda ham chiroyli maskan. Ayniqsa oilamiz bilan kelganimizda namozxona mavjudligi juda quvontirdi. Taomlari mazali, kapuchinosi ajoyib!"</p>
+                </div>
+
+                <div class="bg-dark-800 p-4 rounded-xl border border-gray-800 space-y-2">
+                    <div class="flex justify-between items-center">
+                        <span class="font-bold text-gray-200">Leyla Chibranova</span>
+                        <span class="text-gold-400">★ ★ ★ ★ ☆</span>
+                    </div>
+                    <p class="text-gray-300 leading-relaxed">"Хорошее место для проведения мероприятий и банкетов. Разнообразное меню. Отличный дизайн!"</p>
+                </div>
+
+                <div class="bg-dark-800 p-4 rounded-xl border border-gray-800 space-y-2">
+                    <div class="flex justify-between items-center">
+                        <span class="font-bold text-gray-200">Sardor Rahmonov</span>
+                        <span class="text-gold-400">★ ★ ★ ★ ★</span>
+                    </div>
+                    <p class="text-gray-300 leading-relaxed">"Osh va qozon-kabobining mazasiga gap yo'q. Avtoturargoh keng va qulay."</p>
+                </div>
+
+                <div class="bg-dark-800 p-4 rounded-xl border border-gray-800 space-y-2">
+                    <div class="flex justify-between items-center">
+                        <span class="font-bold text-gray-200">Jamshidbek N.</span>
+                        <span class="text-gold-400">★ ★ ★ ★ ★</span>
+                    </div>
+                    <p class="text-gray-300 leading-relaxed">"Oilaviy kechki ovqat uchun juda shinam va osuda joy. Xizmat ko'rsatish a'lo darajada!"</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- MODAL 4: PHONE NUMBER WITH COPY TO CLIPBOARD BUTTON -->
+    <div id="phone-modal" class="fixed inset-0 z-50 hidden items-center justify-center bg-black/80 backdrop-blur-md p-4">
+        <div class="glass-panel max-w-sm w-full rounded-3xl p-6 border border-gold-500/40 relative shadow-2xl modal-animate-in text-center space-y-5">
+            <button onclick="closePhoneModal()" class="absolute top-4 right-4 text-gray-400 hover:text-gold-400 text-lg">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+
+            <div class="w-14 h-14 mx-auto rounded-full bg-gold-500/10 border border-gold-500/30 flex items-center justify-center text-gold-400 text-2xl">
+                <i class="fa-solid fa-phone"></i>
+            </div>
+
+            <div class="space-y-1">
+                <h3 class="font-serif text-xl font-bold text-gray-100">Mirandi Restorani</h3>
+                <p class="text-xs text-gray-400">Stol va banket bron qilish uchun ma'lumot:</p>
+            </div>
+
+            <div class="bg-dark-800 p-3.5 rounded-2xl border border-gold-500/30 flex items-center justify-between gap-2">
+                <span id="phone-number-text" class="font-serif font-bold text-xl text-gold-400">+998 99 861 20 20</span>
+                <button onclick="copyPhoneNumber()" class="px-3 py-1.5 rounded-xl bg-gold-500/20 text-gold-400 hover:bg-gold-500 hover:text-dark-900 font-bold text-xs transition flex items-center gap-1">
+                    <i class="fa-regular fa-copy"></i> Nusxa
+                </button>
+            </div>
+
+            <div id="copy-toast" class="hidden text-[11px] text-emerald-400 font-semibold">
+                ✓ Raqam buferga nusxalandi!
+            </div>
+
+            <a href="tel:+998998612020" class="block w-full py-3 rounded-xl bg-gradient-to-r from-gold-500 to-gold-600 text-dark-900 font-bold text-xs uppercase tracking-wider hover:from-gold-400 hover:to-gold-500 transition shadow-lg">
+                Qo'ng'iroq Qilish
+            </a>
+        </div>
+    </div>
+
+    <!-- MODAL 5: PRIVACY & SECURITY POLICY -->
+    <div id="privacy-modal" class="fixed inset-0 z-50 hidden items-center justify-center bg-black/80 backdrop-blur-md p-4">
+        <div class="glass-panel max-w-lg w-full rounded-3xl p-6 border border-gold-500/40 relative shadow-2xl modal-animate-in space-y-4 text-xs">
+            <button onclick="closePrivacyModal()" class="absolute top-4 right-4 text-gray-400 hover:text-gold-400 text-lg">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+            <h3 class="font-serif text-xl font-bold text-gray-100 text-center">Maxfiylik va Xavfsizlik Siyosati</h3>
+            <div class="space-y-3 text-gray-300 leading-relaxed max-h-60 overflow-y-auto custom-scrollbar pr-2">
+                <p>Mirandi Restaurant mijozlarining shaxsiy ma'lumotlari xavfsizligini to'liq ta'minlaydi. Sayt orqali yuborilgan hech bir telefon raqami yoki shaxsiy ma'lumot uchinchi shaxslarga berilmaydi.</p>
+                <p>Barcha onlayn aloqa va bron so'rovlari faqatgina restoran ma'muriyati va mijoz o'rtasida shaffof tarzda amalga oshiriladi.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- JAVASCRIPT LOGIC FOR SLIDERS, SWIPE, COPY & MODALS -->
+    <script>
+        // Dishes Data List
+        const dishesData = [
+            {
+                title: "Mirandi Shoxona Osh",
+                price: "65,000 so'm",
+                badge: "Hit Taom",
+                image: "https://images.unsplash.com/photo-1633964913295-ceb43826e7c9?q=80&w=800&auto=format&fit=crop",
+                ingredients: "Sara qo'y go'shti, Devzira/Lazer guruch, sabzi, noxat, bedana tuxumi, qazi, kishmish va maxsus sharqona ziravorlar.",
+                portion: "1 porsiya (450 gr)",
+                time: "10-15 daqiqa"
+            },
+            {
+                title: "Maxsus Qozon-Kabob",
+                price: "85,000 so'm",
+                badge: "Milliy Taom",
+                image: "https://images.unsplash.com/photo-1544025162-d76694265947?q=80&w=800&auto=format&fit=crop",
+                ingredients: "Qozonda oltin rangda pishirilgan yumshoq qo'y qovurg'asi, karsillagan qovurilgan kartoshka, sarxil piyoz va ko'katlar.",
+                portion: "1 porsiya (500 gr)",
+                time: "15-20 daqiqa"
+            },
+            {
+                title: "Chicken Mandi",
+                price: "75,000 so'm",
+                badge: "Arab Uslubi",
+                image: "https://images.unsplash.com/photo-1529042410759-befb1204b468?q=80&w=800&auto=format&fit=crop",
+                ingredients: "Sharqona marinovka qilingan pishirilgan tovuq go'shti, xushbo'y Basmati guruchi, maxsus achchiq va sarimsoqli souslar.",
+                portion: "1 porsiya (550 gr)",
+                time: "15-20 daqiqa"
+            },
+            {
+                title: "Halabi Kebab Assorti",
+                price: "110,000 so'm",
+                badge: "Grill Assorti",
+                image: "https://images.unsplash.com/photo-1555939594-58d7cb561ad1?q=80&w=800&auto=format&fit=crop",
+                ingredients: "Mangalda pishirilgan qo'y qiyma kabobi, tovuq shashlik, pishirilgan pomidor, garchitsa va yangi pishirilgan lavash.",
+                portion: "2 kishilik porsiya",
+                time: "20 daqiqa"
+            },
+            {
+                title: "Qo'y Qovurg'a Shashlik",
+                price: "32,000 so'm",
+                badge: "Mangal",
+                image: "https://images.unsplash.com/photo-1544025162-d76694265947?q=80&w=800&auto=format&fit=crop",
+                ingredients: "Yangi marinovka qilingan qo'y go'shti qovurg'asi, murch, zira va piyoz salati.",
+                portion: "1 sih (180 gr)",
+                time: "15 daqiqa"
+            },
+            {
+                title: "Yevropacha Grek Salati",
+                price: "42,000 so'm",
+                badge: "Parxez Salat",
+                image: "https://images.unsplash.com/photo-1540420773420-3366772f4999?q=80&w=800&auto=format&fit=crop",
+                ingredients: "Yangi bodring, pishgan pomidor, Feta pishlog'i, zaytun mevalari, oregano va birinchi navli Zaytun yog'i.",
+                portion: "1 porsiya (300 gr)",
+                time: "10 daqiqa"
+            }
+        ];
+
+        // Banquet Gallery Data
+        const banquetGallery = [
+            { url: "https://images.unsplash.com/photo-1519167758481-83f550bb49b3?q=80&w=1200&auto=format&fit=crop", title: "Mirandi Muhtasham Banket Zali" },
+            { url: "https://images.unsplash.com/photo-1464366400600-7168b8af9bc3?q=80&w=1200&auto=format&fit=crop", title: "Stollar Bezatilishi va Dekoratsiya" },
+            { url: "https://images.unsplash.com/photo-1511795409834-ef04bbd61622?q=80&w=1200&auto=format&fit=crop", title: "Nikoh To'yi Atmosferasi" },
+            { url: "https://images.unsplash.com/photo-1530103862676-de8c9debad1d?q=80&w=1200&auto=format&fit=crop", title: "Bayramona Marosimlar Atmosferasi" }
+        ];
+
+        let currentDishIndex = 0;
+        let currentLightboxIndex = 0;
+
+        // Mobile Menu Toggle
+        document.getElementById('mobile-menu-btn').addEventListener('click', () => {
+            document.getElementById('mobile-menu').classList.toggle('hidden');
+        });
+
+        // DISH MODAL SLIDER & SWIPE LOGIC
+        function openDishModal(index) {
+            currentDishIndex = index;
+            updateDishModalContent();
+            const modal = document.getElementById('dish-modal');
+            modal.classList.remove('hidden');
+            modal.classList.add('flex');
+        }
+
+        function updateDishModalContent() {
+            const dish = dishesData[currentDishIndex];
+            if (!dish) return;
+
+            document.getElementById('dish-modal-img').src = dish.image;
+            document.getElementById('dish-modal-badge').innerText = dish.badge;
+            document.getElementById('dish-modal-title').innerText = dish.title;
+            document.getElementById('dish-modal-price').innerText = dish.price;
+            document.getElementById('dish-modal-ingredients').innerText = dish.ingredients;
+            document.getElementById('dish-modal-portion').innerText = dish.portion;
+            document.getElementById('dish-modal-time').innerText = dish.time;
+            document.getElementById('dish-modal-counter').innerText = `${currentDishIndex + 1} / ${dishesData.length}`;
+        }
+
+        function prevDish() {
+            currentDishIndex = (currentDishIndex - 1 + dishesData.length) % dishesData.length;
+            updateDishModalContent();
+        }
+
+        function nextDish() {
+            currentDishIndex = (currentDishIndex + 1) % dishesData.length;
+            updateDishModalContent();
+        }
+
+        function closeDishModal() {
+            const modal = document.getElementById('dish-modal');
+            modal.classList.add('hidden');
+            modal.classList.remove('flex');
+        }
+
+        // TOUCH SWIPE GESTURE FOR DISH MODAL
+        let touchStartX = 0;
+        let touchEndX = 0;
+        const dishModalCard = document.getElementById('dish-modal-card');
+
+        dishModalCard.addEventListener('touchstart', (e) => {
+            touchStartX = e.changedTouches[0].screenX;
+        }, { passive: true });
+
+        dishModalCard.addEventListener('touchend', (e) => {
+            touchEndX = e.changedTouches[0].screenX;
+            handleDishSwipe();
+        }, { passive: true });
+
+        function handleDishSwipe() {
+            if (touchEndX < touchStartX - 40) {
+                nextDish();
+            } else if (touchEndX > touchStartX + 40) {
+                prevDish();
+            }
+        }
+
+        // LIGHTBOX BANQUET SLIDER LOGIC
+        function openLightbox(index) {
+            currentLightboxIndex = index;
+            updateLightboxContent();
+            const modal = document.getElementById('lightbox-modal');
+            modal.classList.remove('hidden');
+            modal.classList.add('flex');
+        }
+
+        function updateLightboxContent() {
+            const item = banquetGallery[currentLightboxIndex];
+            if (!item) return;
+
+            document.getElementById('lightbox-img').src = item.url;
+            document.getElementById('lightbox-caption').innerText = item.title;
+            document.getElementById('lightbox-counter').innerText = `${currentLightboxIndex + 1} / ${banquetGallery.length}`;
+        }
+
+        function prevLightbox() {
+            currentLightboxIndex = (currentLightboxIndex - 1 + banquetGallery.length) % banquetGallery.length;
+            updateLightboxContent();
+        }
+
+        function nextLightbox() {
+            currentLightboxIndex = (currentLightboxIndex + 1) % banquetGallery.length;
+            updateLightboxContent();
+        }
+
+        function closeLightbox() {
+            const modal = document.getElementById('lightbox-modal');
+            modal.classList.add('hidden');
+            modal.classList.remove('flex');
+        }
+
+        // KEYBOARD ARROW NAVIGATION
+        document.addEventListener('keydown', (e) => {
+            if (!document.getElementById('dish-modal').classList.contains('hidden')) {
+                if (e.key === 'ArrowLeft') prevDish();
+                if (e.key === 'ArrowRight') nextDish();
+                if (e.key === 'Escape') closeDishModal();
+            } else if (!document.getElementById('lightbox-modal').classList.contains('hidden')) {
+                if (e.key === 'ArrowLeft') prevLightbox();
+                if (e.key === 'ArrowRight') nextLightbox();
+                if (e.key === 'Escape') closeLightbox();
+            }
+        });
+
+        // REVIEWS MODAL & ADD REVIEW FORM LOGIC
+        function openReviewsModal() {
+            const modal = document.getElementById('reviews-modal');
+            modal.classList.remove('hidden');
+            modal.classList.add('flex');
+        }
+
+        function closeReviewsModal() {
+            const modal = document.getElementById('reviews-modal');
+            modal.classList.add('hidden');
+            modal.classList.remove('flex');
+        }
+
+        function toggleAddReviewForm() {
+            const form = document.getElementById('add-review-form');
+            form.classList.toggle('hidden');
+        }
+
+        function submitNewReview() {
+            const name = document.getElementById('review-name').value.trim();
+            const rating = document.getElementById('review-rating').value;
+            const text = document.getElementById('review-text').value.trim();
+
+            if (!name || !text) {
+                alert("Iltimos, ismingiz va sharhingizni kiriting!");
+                return;
+            }
+
+            const stars = "★ ".repeat(rating) + "☆ ".repeat(5 - rating);
+            const container = document.getElementById('reviews-list-container');
+            const newCard = document.createElement('div');
+            newCard.className = "bg-dark-800 p-4 rounded-xl border border-gold-500/40 space-y-2 animate-pulse";
+            newCard.innerHTML = `
+                <div class="flex justify-between items-center">
+                    <span class="font-bold text-gray-200">${name} (Yangi Sharh)</span>
+                    <span class="text-gold-400">${stars}</span>
+                </div>
+                <p class="text-gray-300 leading-relaxed">"${text}"</p>
+            `;
+            container.prepend(newCard);
+
+            document.getElementById('review-name').value = '';
+            document.getElementById('review-text').value = '';
+            toggleAddReviewForm();
+            alert("Rahmat! Sharhingiz muvaffaqiyatli saqlandi!");
+        }
+
+        // PHONE MODAL & COPY TO CLIPBOARD
+        function openPhoneModal() {
+            const modal = document.getElementById('phone-modal');
+            modal.classList.remove('hidden');
+            modal.classList.add('flex');
+        }
+
+        function closePhoneModal() {
+            const modal = document.getElementById('phone-modal');
+            modal.classList.add('hidden');
+            modal.classList.remove('flex');
+        }
+
+        function copyPhoneNumber() {
+            const phoneText = "+998 99 861 20 20";
+            navigator.clipboard.writeText(phoneText).then(() => {
+                const toast = document.getElementById('copy-toast');
+                toast.classList.remove('hidden');
+                setTimeout(() => toast.classList.add('hidden'), 2500);
+            });
+        }
+
+        // PRIVACY MODAL
+        function openPrivacyModal() {
+            const modal = document.getElementById('privacy-modal');
+            modal.classList.remove('hidden');
+            modal.classList.add('flex');
+        }
+
+        function closePrivacyModal() {
+            const modal = document.getElementById('privacy-modal');
+            modal.classList.add('hidden');
+            modal.classList.remove('flex');
+        }
+
+        // CATEGORY FILTER
+        function filterMenu(category) {
+            const items = document.querySelectorAll('.menu-item');
+            const tabs = document.querySelectorAll('.menu-tab');
+
+            tabs.forEach(tab => {
+                tab.classList.remove('bg-gold-500', 'text-dark-900', 'active');
+                tab.classList.add('text-gray-300');
+            });
+
+            event.currentTarget.classList.add('bg-gold-500', 'text-dark-900', 'active');
+            event.currentTarget.classList.remove('text-gray-300');
+
+            items.forEach(item => {
+                if (category === 'all' || item.classList.contains(category)) {
+                    item.style.display = 'block';
+                } else {
+                    item.style.display = 'none';
+                }
+            });
+        }
+    </script>
+</body>
+</html>
